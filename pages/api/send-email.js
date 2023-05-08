@@ -20,7 +20,10 @@ export default async function handler(req, res) {
   `;
 
   const data = {
-    to: "volodamir69@ukr.net",
+    to:
+      body.address === "test"
+        ? process.env.TEST_EMAIL
+        : process.env.ORDER_EMAIL,
     from: '"Телеграм-бот 👻" <admin@sviy.site>',
     subject: `Замовлення з Telegram ${date}`,
     html: message,
@@ -34,4 +37,4 @@ export default async function handler(req, res) {
     .catch((error) => {
       res.status(500).json({ error });
     });
-};
+}
