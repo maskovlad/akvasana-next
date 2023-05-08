@@ -3,7 +3,7 @@ const mail = require("@sendgrid/mail");
 mail.setApiKey(process.env.SENDGRID_API_KEY);
 const date = new Date().toLocaleString();
 
-export default (req, res) => {
+export default async function handler(req, res) {
   const body = JSON.parse(req.body);
 
   const message = `
