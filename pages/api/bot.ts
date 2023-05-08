@@ -5,8 +5,6 @@ export default async function handler(
   request: NextApiRequest,
   response: NextApiResponse
 ) {
-  console.log("Bot Request: ", request.body?.message?.text);
-
   if (request.body?.message?.text) {
     try {
       await bot.handleUpdate(request.body);
