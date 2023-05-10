@@ -1,4 +1,8 @@
 :root {
+  --color-blue: #032e7f;
+  --color-light-blue: #21b6ff;
+  --color-white: #daf5f7;
+  --color-green: #67b96a;
 }
 
 * {
@@ -21,8 +25,14 @@ body {
 }
 
 a {
-  color: inherit;
+  color: var(--color-blue);
   text-decoration: none;
+  transition: 0.2s;
+}
+
+a:hover,
+a:active {
+  color: var(--color-light-blue);
 }
 
 main.main {
@@ -30,7 +40,7 @@ main.main {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 6rem;
+  padding: 2rem 10%;
 }
 
 section,
@@ -38,4 +48,10 @@ header,
 footer {
   border: 1px dashed darkgray;
   width: 100%;
+}
+
+@media (max-width: 1024px) {
+  main.main {
+    padding: 5%;
+  }
 }
