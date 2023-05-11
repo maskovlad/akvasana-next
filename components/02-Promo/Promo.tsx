@@ -1,6 +1,6 @@
 import { css } from '@emotion/css'
 
-const Header = () => {
+const Promo = () => {
   return (
     <header className={css`
       width: 100%;
@@ -14,4 +14,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Promo

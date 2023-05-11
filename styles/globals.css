@@ -35,7 +35,7 @@ a:active {
   color: var(--color-light-blue);
 }
 
-main.main {
+main article.article {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -43,6 +43,12 @@ main.main {
   padding: 2rem 10%;
 }
 
+header,
+footer {
+  padding: 0 10%;
+}
+
+/*todo delete */
 section,
 header,
 footer {
@@ -51,7 +57,13 @@ footer {
 }
 
 @media (max-width: 1024px) {
-  main.main {
-    padding: 5%;
+  main article.article {
+    padding: 2rem 5%;
+  }
+
+  section,
+  header,
+  footer {
+    padding: 0 5%;
   }
 }

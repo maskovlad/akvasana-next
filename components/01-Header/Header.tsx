@@ -1,22 +1,25 @@
-import { css } from "@emotion/css";
+import { css, cx } from "@emotion/css";
 import Image from "next/image";
 import { logo } from "@/public/assets";
 import Link from "next/link";
 import { navLinks } from "@/constants/NavLinks";
 import { useState } from "react";
 import { AiOutlinePlusCircle } from "react-icons/ai";
+import { Montserrat } from "next/font/google";
 
-const Navbar = () => {
+const montserrat = Montserrat({ subsets: ["cyrillic-ext"] });
+
+const Header = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <section
-      className={css`
+    <header 
+      className={cx(montserrat.className,css`
         display: flex;
         justify-content: space-between;
         align-items: center;
         position: relative;
-x      `}
+x      `)}
     >
       <div>
         <Link href="/">
@@ -154,8 +157,8 @@ x      `}
           </ul>
         </div>
       ) : null}
-    </section>
+    </header >
   );
 };
 
-export default Navbar;
+export default Header;

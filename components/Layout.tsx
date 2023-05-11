@@ -1,8 +1,8 @@
 import React, { ReactNode } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { Montserrat } from 'next/font/google';
-import Navbar from "./01-Navbar/Navbar";
+import { Montserrat } from "next/font/google";
+import Header from "./01-Header/Header";
 import Footer from "./10-Footer/Footer";
 
 const montserrat = Montserrat({ subsets: ["cyrillic-ext"] });
@@ -16,9 +16,8 @@ const Layout = ({
   title: string;
   description: string;
 }) => {
-
-const router = useRouter();
-const pathname = router.pathname === "/" ? "" : router.pathname;
+  const router = useRouter();
+  const pathname = router.pathname === "/" ? "" : router.pathname;
 
   return (
     <>
@@ -34,11 +33,11 @@ const pathname = router.pathname === "/" ? "" : router.pathname;
         <meta name="robots" content="index,follow" />
         <link rel="canonical" href={`https://www.akvasana.com.ua${pathname}`} />
       </Head>
-      <main className={`main ${montserrat.className}`}>
-        <Navbar />
-        {children}
-        <Footer />
+      <Header />
+      <main className={montserrat.className}>
+        <article className="article">{children}</article>
       </main>
+      <Footer />
     </>
   );
 };
