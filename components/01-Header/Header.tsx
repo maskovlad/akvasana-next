@@ -13,13 +13,17 @@ const Header = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <header 
-      className={cx(montserrat.className,css`
+    <header
+      className={cx(
+        montserrat.className,
+        css`
         display: flex;
         justify-content: space-between;
         align-items: center;
         position: relative;
-x      `)}
+        padding-top: 1rem;
+      `
+      )}
     >
       <div>
         <Link href="/">
@@ -34,57 +38,60 @@ x      `)}
       </div>
 
       {/** горизонтальне меню */}
-      <ul
+      <nav
         className={css`
-          display: flex;
-          justify-content: space-between;
-          list-style: none;
-          font-weight: 400;
           width: 100%;
           margin-left: 10%;
-
           @media screen and (max-width: 900px) {
             display: none;
           }
         `}
       >
-        {navLinks.map((item) => (
-          <li
-            key={item.link}
-            className={css`
-              position: relative;
-            `}
-          >
-            <a
+        <ul
+          className={css`
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+            font-weight: 400;
+          `}
+        >
+          {navLinks.map((item) => (
+            <li
+              key={item.link}
               className={css`
-                :after {
-                  opacity: 0;
-                  background-color: var(--color-light-blue);
-                  content: "";
-                  bottom: 0;
-                  height: 2px;
-                  width: 100%;
-                  left: 0;
-                  z-index: 2;
-                  display: block;
-                  position: absolute;
-                  transition: 0.3s;
-                  line-height: 1;
-                  transform: scale(1);
-                }
-
-                :hover:after {
-                  bottom: -8px;
-                  opacity: 1;
-                }
+                position: relative;
               `}
-              href={item.link}
             >
-              {item.title}
-            </a>
-          </li>
-        ))}
-      </ul>
+              <a
+                className={css`
+                  :after {
+                    opacity: 0;
+                    background-color: var(--color-light-blue);
+                    content: "";
+                    bottom: 0;
+                    height: 2px;
+                    width: 100%;
+                    left: 0;
+                    z-index: 2;
+                    display: block;
+                    position: absolute;
+                    transition: 0.3s;
+                    line-height: 1;
+                    transform: scale(1);
+                  }
+                  :hover:after {
+                    bottom: -8px;
+                    opacity: 1;
+                  }
+                `}
+                href={item.link}
+              >
+                {item.title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
 
       {/** крестик */}
       <div
@@ -157,7 +164,7 @@ x      `)}
           </ul>
         </div>
       ) : null}
-    </header >
+    </header>
   );
 };
 
