@@ -125,8 +125,8 @@ const Header = () => {
           className={css`
             padding: 0.7rem;
             position: absolute;
-            right: 0;
-            top: 2.5rem;
+            right: 2rem;
+            top: 3.5rem;
             z-index: 2;
             border: 1px solid var(--color-light-blue);
             background: var(--color-white);
@@ -155,7 +155,10 @@ const Header = () => {
             `}
           >
             {navLinks.map((item) => (
-              <li key={item.link} className={css``}>
+              <li key={item.link} className={css`
+                font-size: 1.5rem;
+                line-height: 1.5rem;
+              `}>
                 <a href={item.link} onClick={() => setToggle((prev) => !prev)}>
                   {item.title}
                 </a>
@@ -164,6 +167,7 @@ const Header = () => {
           </ul>
         </div>
       ) : null}
+    
     </header>
   );
 };
