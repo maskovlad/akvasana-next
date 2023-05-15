@@ -1,14 +1,15 @@
 import { css, cx } from "@emotion/css";
 import { mailOrder, postOrder } from "@/lib/dbService";
 import { useState, useEffect } from "react";
-import RegionSelect from "./RegionSelect/RegionSelect";
-import Address from "./Address/Address";
-import Phone from "./Phone/Phone";
+// import RegionSelect from "./RegionSelect/RegionSelect";
+// import Address from "./Address/Address";
+// import Phone from "./Phone/Phone";
 import Client from "./Client/Client";
 import Checkbox from "./Checkbox/Checkbox";
 import ButtonSubmit from "./ButtonSubmit";
 import QtyButtons from "./QtyButtons";
 import { Accessories, AkvasanaOrder, Region } from "@/types/AkvasanaData";
+import { RegionSelect,Address,Phone } from './TextInputs';
 
 const Order = ({
   regions,
@@ -171,6 +172,14 @@ const row = css`
   align-items: flex-start;
   margin: 0 30px;
   border-bottom: #365aab solid 2px;
+
+  @media (max-width: 768px) {
+    margin: 0 20px;
+  }
+
+  @media (max-width: 575px) {
+    margin: 0 10px;
+  }
 `;
 
 export default Order;
