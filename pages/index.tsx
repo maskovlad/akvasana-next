@@ -1,22 +1,49 @@
-import Layout from '@/components/Layout'
-import Promo from '@/components/02-Promo/Promo'
-import Preferences from '@/components/03-Preferences/Preferences'
-import Order from '../components/04-Order/Order';
-import About from '@/components/05-About/About';
-import Delivery from '@/components/06-Delivery/Delivery';
-import Accessory from '@/components/07-Accesoory/Accessory';
-import Blog from '@/components/08-Blog/Blog';
+import Layout from "@/components/Layout";
+import Promo from "@/components/02-Promo/Promo";
+import Preferences from "@/components/03-Preferences/Preferences";
+import Order from "../components/04-Order/Order";
+import About from "@/components/05-About/About";
+import Delivery from "@/components/06-Delivery/Delivery";
+import Accessory from "@/components/07-Accesoory/Accessory";
+import Blog from "@/components/08-Blog/Blog";
+import { getRegions, getAccessory } from "../lib/dbService";
+import { Accessories, Region } from "@/types/AkvasanaData";
 
-export default function Home() {
+export default function Home({
+  regions,
+  accessory,
+}: {
+  regions: Region[];
+  accessory: Accessories;
+}) {
+
+  console.log({regions,accessory})
+
   return (
-    <Layout title='Головна сторінка' description='Опис головної сторінки'>
+    <Layout
+      title="Аква Сана Next.js - Сторінка в процесі розробки"
+      description="Опис головної сторінки"
+    >
       <Promo />
       <Preferences />
-      <Order />
+      <Order regions={regions} accessory={accessory}/>
       <About />
       <Delivery />
       <Accessory />
       <Blog />
     </Layout>
-  )
+  );
+}
+
+export async function getStaticProps() {
+  const regions = await getRegions();
+  const accessory = await getAccessory();
+  if (!accessory || !regions) console.error("Не вдалося завантажити дані з БД");
+  
+  return {
+    props: {
+      regions,
+      accessory,
+    },
+  };
 }
