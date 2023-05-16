@@ -3,8 +3,7 @@ import { css } from "@emotion/css";
 const Client = ({ onChange }) => {
   return (
     <>
-      <div
-        className={css`
+      <div className={css`
           display: block;
           padding: 20px;
           width: 50%;
@@ -15,8 +14,7 @@ const Client = ({ onChange }) => {
             width: 100%;
             padding: 10px 0;
           }
-        `}
-      >
+        `}>
         <p
           className={css`
             max-width: 100%;

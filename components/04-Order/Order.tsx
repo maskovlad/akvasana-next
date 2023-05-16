@@ -108,20 +108,18 @@ const Order = ({
         <path d="m 0,5 c 5.02,2.58 18.82,5.06 25,6.42 0,0 54,9.85 54,9.85 0,0 53,5.82 53,5.82 0,0 12,0.91 12,0.91 0,0 32,0 32,0 0,0 12,-0.91 12,-0.91 28.95,-2.03 57.39,-6.86 86,-11.66 0,0 65,-9.26 65,-9.26 0,0 20,-1.26 20,-1.26 0,0 12,-0.91 12,-0.91 0,0 22,0 22,0 0,0 18,1 18,1 0,0 19,1.83 19,1.83 26.86,2.69 53.43,6.8 80,11.59 0,0 34,6.58 34,6.58 -4.46,-2.65 -18.2,-5.2 -24,-6.63 0,0 -61,-11.64 -61,-11.64 C 442.09,4.29 412.33,0.03 396,0 c 0,0 -33,0 -33,0 0,0 -12,0.91 -12,0.91 -27.26,1.87 -54.06,6.14 -81,10.66 -28.89,4.84 -57.79,9.48 -87,11.52 0,0 -12,0.91 -12,0.91 0,0 -32,0 -32,0 0,0 -10,-0.91 -10,-0.91 C 98.47,20.99 68.19,16.99 38,11.75 38,11.75 0,5 0,5 Z" />
       </svg>
 
-      <div
-        className={css`
+      <div className={css`
           background-color: #0a5b88;
           margin: 50px 0;
           max-width: 100%;
           border-radius: 20px;
           padding: 0.5rem 2rem;
-          
+
           @media (max-width: 600px) {
             margin: 30px 0;
             padding: 0.5rem 1.5rem;
           }
-        `}
-      >
+        `}>
         <form onSubmit={orderSubmit} className={css``}>
           <div className={row}>
             <RegionSelect regSelect={regions} onChange={regionChange} />
@@ -148,16 +146,14 @@ const Order = ({
             />
           </div>
 
-          <div
-            className={cx(
+          <div className={cx(
               row,
               css`
                 justify-content: space-around;
                 flex-wrap: nowrap;
                 padding: 0;
               `
-            )}
-          >
+            )}>
             <QtyButtons
               qty={qty}
               minusClick={() => {
@@ -168,8 +164,18 @@ const Order = ({
             />
           </div>
 
-          <div className={row}>
-            <ButtonSubmit />
+          <div className={cx(
+            row,
+            css`
+              justify-content: center;
+              flex-wrap: nowrap;
+              border-bottom: none;
+            `)}>
+            <button type="submit" className={cx("btn",css`
+              margin: 20px 0;
+            `)}>
+              <span>ЗАМОВИТИ</span>
+            </button>
           </div>
         </form>
       </div>

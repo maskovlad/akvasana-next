@@ -3,30 +3,24 @@ import { css } from "@emotion/css";
 const QtyButtons = ({ minusClick, plusClick, qty, total }) => {
   return (
     <>
-      <div
-        className={css`
+      <div className={css`
           display: flex;
           flex-direction: column;
           align-items: center;
           gap: 1rem;
           padding: 20px 0;
-        `}
-      >
-        <p
-          className={css`
+        `}>
+        <p className={css`
             max-width: 100%;
             font-weight: 600;
             color: var(--color-white);
-          `}
-        >
+          `}>
           Кількість бутлів
         </p>
-        <div
-          className={css`
+        <div className={css`
             display: flex;
             flex-direction: row;
-          `}
-        >
+          `} >
           <button
             type="button"
             id="quantity-bottles-minus"
@@ -44,7 +38,7 @@ const QtyButtons = ({ minusClick, plusClick, qty, total }) => {
               :hover {
                 color: var(--color-grey, #d2d6e9);
               }
-              .btn-add:focus {
+              :focus {
                 color: var(--color-yellow);
                 outline: none;
               }
@@ -54,8 +48,7 @@ const QtyButtons = ({ minusClick, plusClick, qty, total }) => {
                 padding: 0 10px;
               }
             `}
-            onClick={minusClick}
-          >
+            onClick={minusClick}>
             -
           </button>
           <input
@@ -63,7 +56,7 @@ const QtyButtons = ({ minusClick, plusClick, qty, total }) => {
             name="quantity-bottles"
             id="quantity-bottles"
             className={css`
-              text-align: center;
+              text-align: right;
               font-size: 30px;
               font-weight: 500;
               border: none;
@@ -75,6 +68,11 @@ const QtyButtons = ({ minusClick, plusClick, qty, total }) => {
               width: 3rem;
               line-height: 3rem;
 
+              :focus {
+                color: var(--color-yellow);
+                outline: none;
+              }
+
               @media (max-width: 425px) {
                 font-size: 20px;
                 width: 2rem;
@@ -85,10 +83,7 @@ const QtyButtons = ({ minusClick, plusClick, qty, total }) => {
             min="1"
             readOnly
           />
-          <button
-            type="button"
-            id="quantity-bottles-plus"
-            className={css`
+          <button className={css`
               margin: 0;
               background: var(--color-blue);
               border: none;
@@ -101,7 +96,7 @@ const QtyButtons = ({ minusClick, plusClick, qty, total }) => {
               :hover {
                 color: var(--color-grey, #d2d6e9);
               }
-              .btn-add:focus {
+              :focus {
                 color: var(--color-yellow);
                 outline: none;
               }
@@ -109,8 +104,9 @@ const QtyButtons = ({ minusClick, plusClick, qty, total }) => {
               @media (max-width: 425px) {
                 font-size: 20px;
                 padding: 0 10px;
-              }
-            `}
+              }`}
+            type="button"
+            id="quantity-bottles-plus"
             onClick={plusClick}
           >
             +
@@ -138,7 +134,7 @@ const QtyButtons = ({ minusClick, plusClick, qty, total }) => {
           name="total"
           id="total"
           className={css`
-            text-align: center;
+            text-align: right;
             font-size: 30px;
             font-weight: 500;
             border: none;
@@ -149,6 +145,11 @@ const QtyButtons = ({ minusClick, plusClick, qty, total }) => {
             margin: 0 2px;
             width: 140px;
             line-height: 3rem;
+
+            :focus {
+                color: var(--color-yellow);
+                outline: none;
+              }
 
             @media (max-width: 425px) {
               font-size: 20px;
