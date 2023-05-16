@@ -11,7 +11,7 @@ const Client = ({ onChange }) => {
           @media (max-width: 768px) {
             width: 50%;
           }
-          @media (max-width: 768px) {
+          @media (max-width: 600px) {
             width: 100%;
             padding: 10px 0;
           }
@@ -20,7 +20,7 @@ const Client = ({ onChange }) => {
         <p
           className={css`
             max-width: 100%;
-            font-weight: 500;
+            font-weight: 600;
             color: #c8c8c8;
           `}
         >
@@ -63,7 +63,7 @@ const Client = ({ onChange }) => {
           @media (max-width: 768px) {
             width: 50%;
           }
-          @media (max-width: 768px) {
+          @media (max-width: 600px) {
             width: 100%;
             padding: 10px 0;
           }

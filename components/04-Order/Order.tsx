@@ -83,7 +83,12 @@ const Order = ({
     >
       <h2
         className={css`
+          text-align: center;
           margin: 3rem 0 2rem;
+
+          @media (max-width: 600px) {
+            margin: 2rem 0 1rem;
+          }
         `}
       >
         Замовлення води Аква Сана онлайн
@@ -106,12 +111,16 @@ const Order = ({
       <div
         className={css`
           background-color: #0a5b88;
-          margin: 50px;
-          padding: 0 30px;
+          margin: 50px 0;
           max-width: 100%;
+          border-radius: 20px;
+          padding: 0.5rem 2rem;
+          @media (max-width: 600px) {
+            margin: 30px 0;
+          }
         `}
       >
-        <form onSubmit={orderSubmit}>
+        <form onSubmit={orderSubmit} className={css``}>
           <div className={row}>
             <RegionSelect regSelect={regions} onChange={regionChange} />
             <Address
@@ -170,16 +179,13 @@ const row = css`
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
-  margin: 0 30px;
   padding: 10px 0;
   border-bottom: #365aab solid 2px;
 
   @media (max-width: 768px) {
-    margin: 0 20px;
   }
 
   @media (max-width: 575px) {
-    margin: 0 10px;
   }
 `;
 
