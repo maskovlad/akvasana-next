@@ -171,6 +171,7 @@ const row = css`
   flex-wrap: wrap;
   align-items: flex-start;
   margin: 0 30px;
+  padding: 10px 0;
   border-bottom: #365aab solid 2px;
 
   @media (max-width: 768px) {

@@ -24,11 +24,11 @@ const input = css`
   height: 35px;
   width: 100%;
   padding: 6px 12px;
-  border: 1px solid #ccc;
+  border: 2px solid var(--color-blue);
   font-size: 14px;
-  border-radius: 5px;
+  border-radius: 10px;
   text-align: left;
-  background-color: #dddddd !important;
+  background-color: #dddddd;
   color: #222222;
 
   ::placeholder {
