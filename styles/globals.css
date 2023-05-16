@@ -1,8 +1,11 @@
 :root {
   --color-blue: #032e7f;
+  --color-mid-blue: #275efe;
   --color-light-blue: #21b6ff;
   --color-white: rgb(218, 245, 247);
   --color-green: #67b96a;
+  --color-yellow: #eaba1a;
+  --color-grey: #d2d6e9;
 
   --transition: all 200ms ease;
 

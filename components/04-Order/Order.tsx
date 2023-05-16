@@ -115,8 +115,10 @@ const Order = ({
           max-width: 100%;
           border-radius: 20px;
           padding: 0.5rem 2rem;
+          
           @media (max-width: 600px) {
             margin: 30px 0;
+            padding: 0.5rem 1.5rem;
           }
         `}
       >
@@ -135,12 +137,12 @@ const Order = ({
 
           <div className={row}>
             <Checkbox
-              label={`Чи потрібна Вам тара?(${accessory[0].cost})грн/бутиль`}
+              label={`Чи потрібна Вам тара?(${accessory[0].cost})грн/бутель`}
               value={accessory[0].cost}
               onChange={() => setBottle(!bottle)}
             />
             <Checkbox
-              label={`Чи потрібна Вам помпа?(${accessory[1].cost})грн/бутиль`}
+              label={`Чи потрібна Вам помпа?(${accessory[1].cost})грн/бутель`}
               value={accessory[1].cost}
               onChange={() => setPomp(!pomp)}
             />
@@ -150,8 +152,9 @@ const Order = ({
             className={cx(
               row,
               css`
-                justify-content: center;
+                justify-content: space-around;
                 flex-wrap: nowrap;
+                padding: 0;
               `
             )}
           >

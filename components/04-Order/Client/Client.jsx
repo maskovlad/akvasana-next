@@ -21,7 +21,7 @@ const Client = ({ onChange }) => {
           className={css`
             max-width: 100%;
             font-weight: 600;
-            color: #c8c8c8;
+            color: var(--color-white);
           `}
         >
           Чи є ви клієнтом Аква Сана <span style={{ color: "red" }}>*</span>

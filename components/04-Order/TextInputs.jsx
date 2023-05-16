@@ -17,7 +17,7 @@ const wrap = css`
 const label = css`
   max-width: 100%;
   font-weight: 500;
-  color: #c8c8c8;
+  color: var(--color-white);
 `;
 const input = css`
   margin-top: 5px;
