@@ -1,6 +1,6 @@
 import { css } from "@emotion/css";
 
-const Client = ({ onChange }) => {
+const Client = ({ onChange, checked }) => {
   return (
     <>
       <div className={css`
@@ -15,48 +15,41 @@ const Client = ({ onChange }) => {
             padding: 10px 0;
           }
         `}>
-        <p
-          className={css`
+        <p className={css`
             max-width: 100%;
             font-weight: 600;
             color: var(--color-white);
-          `}
-        >
+          `}>
           Чи є ви клієнтом Аква Сана <span style={{ color: "red" }}>*</span>
         </p>
-        <div
-          className={css`
+        <div className={css`
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
-          `}
-        >
-          <label
-            className={css`
+          `}>
+          <label className={css`
               margin-right: 20px;
               margin-left: 10px;
               color: var(--color-white);
             `}
           >
-            <input 
-              type="radio" 
-              className={options} 
-              name="example" 
+            <input
+              type="radio"
+              className={options}
+              name="client"
               value="Так"
               onChange={onChange}
-              checked />
+              checked={checked === "Так" ? true : false} />
             Так
           </label>
-          <label
-            className={css`
+          <label className={css`
               margin-left: 10px;
               color: var(--color-white);
-            `}
-          >
-            <input 
-              type="radio" 
-              className={options} 
-              name="example" 
+            `}>
+            <input
+              type="radio"
+              className={options}
+              name="client"
               value="Ні"
               onChange={onChange} />
             Ні
@@ -64,8 +57,7 @@ const Client = ({ onChange }) => {
         </div>
       </div>
 
-      <div
-        className={css`
+      <div className={css`
           display: block;
           padding: 20px;
           width: 50%;
@@ -76,8 +68,7 @@ const Client = ({ onChange }) => {
             width: 100%;
             padding: 10px 0;
           }
-        `}
-      >
+        `}>
         <p className={css`
         color:var(--color-white)`}>
           <span style={{ color: "red" }}>*</span> Зірочкою позначені поля,
@@ -93,7 +84,7 @@ export default Client;
 const options = css`
   appearance: none;
   position: relative;
-  top: 13.33333px;
+  top: 13px;
   right: 0;
   bottom: 0;
   left: 0;

@@ -25,7 +25,7 @@ const Order = ({
   }); // об'єкт з даними по вибраному району
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
-  const [client, setClient] = useState("");
+  const [isClient, setIsClient] = useState("Так");
   const [bottle, setBottle] = useState(false);
   const [pomp, setPomp] = useState(false);
   const [qty, setQty] = useState(0);
@@ -64,7 +64,7 @@ const Order = ({
       regionName: region.regionName,
       address,
       phone,
-      isClient: client,
+      isClient,
       bottle: bottle ? "Так" : "Ні",
       pomp: pomp ? "Так" : "Ні",
       qty,
@@ -82,27 +82,33 @@ const Order = ({
     const status = await mailOrder(data)
 
     if (status === 202) { setSentStatus("success") } else { setSentStatus("error") }
+    setAddress("")
+    setPhone("")
+    setIsClient("Так")
+    setBottle(false)
+    setPomp(false)
+    setQty(0)
+    setTotal(0)
+    setMinQty(0)
+
+    setTimeout(()=>setSentStatus("done"),3000)
   }
 
   return (
-    <section
-      className={css`
+    <section className={css`
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-      `}
-    >
-      <h2
-        className={css`
+      `}>
+      <h2 className={css`
           text-align: center;
           margin: 3rem 0 2rem;
 
           @media (max-width: 600px) {
             margin: 2rem 0 1rem;
           }
-        `}
-      >
+        `}>
         Замовлення води Аква Сана онлайн
       </h2>
       <svg
@@ -135,26 +141,30 @@ const Order = ({
         <form onSubmit={orderSubmit} className={css``}>
           <div className={row}>
             <RegionSelect regSelect={regions} onChange={regionChange} />
-            <Address
-              onChange={(event: any) => setAddress(event.target.value)}
-            />
+            <Address onChange={(event: any) => setAddress(event.target.value)} />
             <Phone onChange={(event: any) => setPhone(event.target.value)} />
           </div>
 
           <div className={row}>
-            <Client onChange={(event: any) => setClient(event.target.value)} />
+            <Client 
+              onChange={(event: any) => setIsClient(event.target.value)}
+              checked={isClient} />
           </div>
 
           <div className={row}>
             <Checkbox
               label={`Чи потрібна Вам тара?(${accessory[0].cost})грн/бутель`}
               value={accessory[0].cost}
-              onChange={() => setBottle(!bottle)}
+              name={accessory[0].item}
+              onChange={(event: any) => setBottle(event.target.checked)}
+              checked={bottle}
             />
             <Checkbox
               label={`Чи потрібна Вам помпа?(${accessory[1].cost})грн/бутель`}
               value={accessory[1].cost}
-              onChange={() => setPomp(!pomp)}
+              name={accessory[0].item}
+              onChange={(event: any) => setPomp(event.target.checked)}
+              checked={pomp}
             />
           </div>
 
@@ -176,18 +186,35 @@ const Order = ({
             />
           </div>
 
-          <div className={cx(
-            row,
-            css`
+          <div className={css`
+              display: flex;
+              flex-direction: column;
+              align-items: center;
               justify-content: center;
-              flex-wrap: nowrap;
-              border-bottom: none;
-            `)}>
+              padding: 1rem 0 2rem;
+            `}>
             <button type="submit" className={cx("btn", css`
               margin: 20px 0;
             `)}>
               <span>ЗАМОВИТИ</span>
             </button>
+            {sentStatus==="success"
+              ? <p className={css`
+                  font-weight: 600;
+                  color: var(--color-white);
+                `}>
+                  Дякуємо за замовлення!
+                  Незабаром ми зв&apos;яжемося з вами.</p>
+              : sentStatus==="error" 
+              ? <p className={css`
+                  font-weight: 600;
+                  color: red;
+                `}>
+                  Щось пішло не так. Спробуйте перезавантажити
+                  сторінку зробити замовлення ще раз.
+                </p>
+              : null
+            }
           </div>
         </form>
       </div>
@@ -200,7 +227,7 @@ const row = css`
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
-  padding: 10px 0;
+  padding: 1rem 0;
   border-bottom: #365aab solid 2px;
 
   @media (max-width: 768px) {

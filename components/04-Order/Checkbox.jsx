@@ -1,43 +1,38 @@
 import { css } from "@emotion/css";
 
-const Checkbox = ({ label, value, onChange }) => {
+const Checkbox = ({ label, value, name, onChange, checked }) => {
   return (
-    <div
-      className={css`
-        display: block;
-        padding: 20px;
+    <div className={css`
+      display: block;
+      padding: 20px;
+      width: 50%;
+      @media (max-width: 768px) {
         width: 50%;
-        @media (max-width: 768px) {
-          width: 50%;
-        }
-        @media (max-width: 600px) {
-          width: 100%;
-          padding: 10px 0;
-        }
-      `}
-    >
-      <p
-        className={css`
-          max-width: 100%;
-          font-weight: 600;
-          color: var(--color-white);
-        `}
-      >
+      }
+      @media (max-width: 600px) {
+        width: 100%;
+        padding: 10px 0;
+      }
+    `}>
+      <p className={css`
+        max-width: 100%;
+        font-weight: 600;
+        color: var(--color-white);
+      `}>
         {label}
       </p>
-      <label
-        className={css`
-          margin-right: 20px;
-          margin-left: 10px;
-          color: var(--color-white);
-        `}
+      <label className={css`
+        margin-right: 20px;
+        margin-left: 10px;
+        color: var(--color-white);
+      `}
       >
-        <input
-          type="checkbox"
+        <input type="checkbox"
           className={options}
-          name="example"
+          name={name}
           value={value}
           onChange={onChange}
+          checked={checked}
         />
         Так
       </label>
@@ -50,7 +45,7 @@ export default Checkbox;
 const options = css`
   appearance: none;
   position: relative;
-  top: 13.33333px;
+  top: 13px;
   right: 0;
   bottom: 0;
   left: 0;

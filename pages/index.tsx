@@ -17,8 +17,6 @@ export default function Home({
   accessory: Accessories;
 }) {
 
-  console.log({regions,accessory})
-
   return (
     <Layout
       title="Аква Сана Next.js - Сторінка в процесі розробки"
