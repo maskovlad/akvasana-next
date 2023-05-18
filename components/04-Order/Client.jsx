@@ -38,7 +38,13 @@ const Client = ({ onChange }) => {
               color: var(--color-white);
             `}
           >
-            <input type="radio" className={options} name="example" />
+            <input 
+              type="radio" 
+              className={options} 
+              name="example" 
+              value="Так"
+              onChange={onChange}
+              checked />
             Так
           </label>
           <label
@@ -47,7 +53,12 @@ const Client = ({ onChange }) => {
               color: var(--color-white);
             `}
           >
-            <input type="radio" className={options} name="example" />
+            <input 
+              type="radio" 
+              className={options} 
+              name="example" 
+              value="Ні"
+              onChange={onChange} />
             Ні
           </label>
         </div>

@@ -1,15 +1,11 @@
 import { css, cx } from "@emotion/css";
-import { mailOrder, postOrder } from "@/lib/dbService";
+import { mailOrder, postOrder } from "@/lib/apiService";
 import { useState, useEffect } from "react";
-// import RegionSelect from "./RegionSelect/RegionSelect";
-// import Address from "./Address/Address";
-// import Phone from "./Phone/Phone";
-import Client from "./Client/Client";
-import Checkbox from "./Checkbox/Checkbox";
-import ButtonSubmit from "./ButtonSubmit";
+import Client from "./Client";
+import Checkbox from "./Checkbox";
 import QtyButtons from "./QtyButtons";
 import { Accessories, AkvasanaOrder, Region } from "@/types/AkvasanaData";
-import { RegionSelect,Address,Phone } from './TextInputs';
+import { RegionSelect, Address, Phone } from './TextInputs';
 
 const Order = ({
   regions,
@@ -18,15 +14,24 @@ const Order = ({
   regions: Region[];
   accessory: Accessories;
 }) => {
-  const [region, setRegion] = useState<Region | undefined>(undefined); // об'єкт з даними по вибраному району
-  const [client, setClient] = useState("");
+
+  const [region, setRegion] = useState<Region>({
+    id: 0,
+    regionName: "",
+    minQty: 0,
+    cost: 0,
+    cost1: 0,
+    delivery: "",
+  }); // об'єкт з даними по вибраному району
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
+  const [client, setClient] = useState("");
   const [bottle, setBottle] = useState(false);
   const [pomp, setPomp] = useState(false);
   const [qty, setQty] = useState(0);
   const [total, setTotal] = useState(0); // 9
   const [minQty, setMinQty] = useState(0);
+  const [sentStatus, setSentStatus] = useState("undef")
 
   // при изменении стейта указанных комп-тов useEffect пересчитает сумму
   useEffect(() => {
@@ -52,24 +57,31 @@ const Order = ({
     setMinQty(() => selectRegion.minQty * 1);
   };
 
-  //трансформация данных для отправки на сервер
-  // const dataReq = () => {
-  //   return {
-  //     regionName: region.regionName,
-  //     address,
-  //     phone,
-  //     isClient: client,
-  //     bottle: bottle,
-  //     pomp: pomp,
-  //     qty: qty,
-  //     total,
-  //   } as AkvasanaOrder;
-  // };
+  // трансформация данных для отправки на сервер
+  const orderData = () => {
+    const data: AkvasanaOrder = {
+      app: "SITE",
+      regionName: region.regionName,
+      address,
+      phone,
+      isClient: client,
+      bottle: bottle ? "Так" : "Ні",
+      pomp: pomp ? "Так" : "Ні",
+      qty,
+      total,
+    }
+    return data
+  };
 
-  function orderSubmit(event: any) {
-    // console.log("orderSubmit", dataReq());
-    // postOrder(dataReq());
+  async function orderSubmit(event: any) {
     event.preventDefault();
+
+    const data = orderData()
+
+    await postOrder(data);
+    const status = await mailOrder(data)
+
+    if (status === 202) { setSentStatus("success") } else { setSentStatus("error") }
   }
 
   return (
@@ -147,13 +159,13 @@ const Order = ({
           </div>
 
           <div className={cx(
-              row,
-              css`
+            row,
+            css`
                 justify-content: space-around;
                 flex-wrap: nowrap;
                 padding: 0;
               `
-            )}>
+          )}>
             <QtyButtons
               qty={qty}
               minusClick={() => {
@@ -171,7 +183,7 @@ const Order = ({
               flex-wrap: nowrap;
               border-bottom: none;
             `)}>
-            <button type="submit" className={cx("btn",css`
+            <button type="submit" className={cx("btn", css`
               margin: 20px 0;
             `)}>
               <span>ЗАМОВИТИ</span>

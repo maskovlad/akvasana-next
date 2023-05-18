@@ -56,7 +56,7 @@ const QtyButtons = ({ minusClick, plusClick, qty, total }) => {
             name="quantity-bottles"
             id="quantity-bottles"
             className={css`
-              text-align: right;
+              text-align: center;;
               font-size: 30px;
               font-weight: 500;
               border: none;
@@ -134,7 +134,7 @@ const QtyButtons = ({ minusClick, plusClick, qty, total }) => {
           name="total"
           id="total"
           className={css`
-            text-align: right;
+            text-align: center;;
             font-size: 30px;
             font-weight: 500;
             border: none;

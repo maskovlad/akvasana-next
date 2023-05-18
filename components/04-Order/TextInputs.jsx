@@ -63,6 +63,7 @@ export const RegionSelect = ({ regSelect, onChange }) => {
         className={input}
         defaultValue=""
         onChange={(e) => onChange(e.target.value)}
+        required
       >
         <option value="" hidden>
           Виберіть район
@@ -88,6 +89,7 @@ export const Address = ({ onChange }) => {
         className={input}
         maxLength="40"
         placeholder="Введіть адресу (квартира/офіс)"
+        required
       />
     </div>
   );
@@ -107,6 +109,7 @@ export const Phone = ({ onChange }) => {
         mask="_"
         placeholder="+38(000)-000-00-00"
         onChange={onChange}
+        required
       />
     </div>
   );

@@ -1,4 +1,5 @@
 export type AkvasanaOrder = {
+  app:string;
   regionName: string;
   address: string;
   phone: string;

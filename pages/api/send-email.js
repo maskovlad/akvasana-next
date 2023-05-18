@@ -24,8 +24,8 @@ export default async function handler(req, res) {
       body.address === "test"
         ? process.env.TEST_EMAIL
         : process.env.ORDER_EMAIL,
-    from: '"Телеграм-бот 👻" <admin@sviy.site>',
-    subject: `Замовлення з Telegram ${date}`,
+    from: 'Клієнт Аква Сана <admin@sviy.site>',
+    subject: `Замовлення з ${body.app} 👻 ${date}`,
     html: message,
   };
 
