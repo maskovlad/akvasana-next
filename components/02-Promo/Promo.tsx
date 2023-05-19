@@ -6,6 +6,7 @@ import {
   phoneIcon,
   logoBottle,
 } from "@/public/assets";
+import { comfortaaFont } from "@/styles/ComfortaaFont"
 
 const Promo = () => {
   return (
@@ -95,11 +96,9 @@ const Promo = () => {
         `}
       >
         <h1
-          className={css`
+          className={cx(comfortaaFont, css`
             margin: 10% 0;
-            color: var(--color-white);
-            filter: drop-shadow(2px 2px 2px black);
-          `}
+          `)}
         >
           Доставка води
           <br />у Кривому Розі
@@ -203,7 +202,7 @@ const Promo = () => {
             height={123}
             alt="Бутель 19,8 л"
           />
-          <button className={cx("btn", css``)}>Замовити зараз</button>
+          <a href="#order" className={cx("btn", css``)}>Замовити зараз</a>
         </div>
       </div>
     </section>

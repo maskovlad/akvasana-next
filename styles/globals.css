@@ -16,6 +16,19 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  outline: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html,
@@ -36,7 +49,14 @@ h1 {
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
+}
+
+h1,
+h2 {
+  color: var(--color-white);
+  -webkit-filter: drop-shadow(0 0 2px var(--color-blue));
+  filter: drop-shadow(0 0 2px var(--color-blue));
 }
 
 a {
@@ -75,6 +95,7 @@ main article.article {
 .btn:hover {
   box-shadow: 0 4px 13px 0px var(--color-white);
   transform: translateY(-5px);
+  color: var(--color-white);
 }
 
 .btn:active {
@@ -129,4 +150,5 @@ footer {
 @media (max-width: 1024px) {
   main article.article {
     padding: 0 5%;
-  }}
+  }
+}

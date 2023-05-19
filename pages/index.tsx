@@ -9,6 +9,7 @@ import Blog from "@/components/08-Blog/Blog";
 import { getRegions, getAccessory } from "../lib/dbService";
 import { Accessories, Region } from "@/types/AkvasanaData";
 
+
 export default function Home({
   regions,
   accessory,

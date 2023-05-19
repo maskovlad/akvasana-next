@@ -6,6 +6,8 @@ import Checkbox from "./Checkbox";
 import QtyButtons from "./QtyButtons";
 import { Accessories, AkvasanaOrder, Region } from "@/types/AkvasanaData";
 import { RegionSelect, Address, Phone } from './TextInputs';
+import { comfortaaFont } from '@/styles/ComfortaaFont';
+
 
 const Order = ({
   regions,
@@ -91,7 +93,7 @@ const Order = ({
     setTotal(0)
     setMinQty(0)
 
-    setTimeout(()=>setSentStatus("done"),3000)
+    setTimeout(() => setSentStatus("done"), 3000)
   }
 
   return (
@@ -100,15 +102,16 @@ const Order = ({
         flex-direction: column;
         align-items: center;
         justify-content: center;
-      `}>
-      <h2 className={css`
+      `}
+      id="order">
+      <h2 className={cx(comfortaaFont, css`
           text-align: center;
           margin: 3rem 0 2rem;
 
           @media (max-width: 600px) {
             margin: 2rem 0 1rem;
           }
-        `}>
+        `)}>
         Замовлення води Аква Сана онлайн
       </h2>
       <svg
@@ -146,7 +149,7 @@ const Order = ({
           </div>
 
           <div className={row}>
-            <Client 
+            <Client
               onChange={(event: any) => setIsClient(event.target.value)}
               checked={isClient} />
           </div>
@@ -198,22 +201,22 @@ const Order = ({
             `)}>
               <span>ЗАМОВИТИ</span>
             </button>
-            {sentStatus==="success"
+            {sentStatus === "success"
               ? <p className={css`
                   font-weight: 600;
                   color: var(--color-white);
                 `}>
-                  Дякуємо за замовлення!
-                  Незабаром ми зв&apos;яжемося з вами.</p>
-              : sentStatus==="error" 
-              ? <p className={css`
+                Дякуємо за замовлення!
+                Незабаром ми зв&apos;яжемося з вами.</p>
+              : sentStatus === "error"
+                ? <p className={css`
                   font-weight: 600;
                   color: red;
                 `}>
                   Щось пішло не так. Спробуйте перезавантажити
                   сторінку зробити замовлення ще раз.
                 </p>
-              : null
+                : null
             }
           </div>
         </form>
