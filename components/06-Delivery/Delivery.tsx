@@ -1,9 +1,40 @@
 import { krogSchema } from "@/public/assets"
 import { comfortaaFont } from "@/styles/ComfortaaFont";
+import { Region } from "@/types/AkvasanaData";
 import { css, cx } from "@emotion/css";
 import Image from 'next/image';
 
-const Delivery = () => {
+const Delivery = ({ regions }: { regions: Region[]; }) => {
+
+  const colorRegion = (id: number) => {
+    switch (id) {
+      case 1:
+        return "#996600"
+    
+      case 2:
+        return "#ccf4cc"
+    
+      case 3:
+        return "#003399"
+    
+      case 4:
+        return "#99ff66"
+    
+      case 5:
+        return "#cc9900"
+    
+      case 6:
+        return "#ff794b"
+    
+      case 7:
+        return "#990000"
+    
+      default:
+        return "#fff"
+    }
+    
+  }
+
   return (
     <section className={css`
         display: flex;
@@ -53,86 +84,85 @@ const Delivery = () => {
         </div>
 
         <div>
-          <div className={cx(regionStyle, css`
-            :before {
-              content: "1";
-              background-color: #996600;
-              padding: 10px 19px;
-            }
-          `)}>
-            <div>
-              Тернівський (від 2-х бутлів)<br />
-              <span>понеділок, четвер</span> 50 грн/шт
-            </div>
-          </div>
-          <div className={cx(regionStyle, css`
-            :before {
-              content: "2";
-              background-color: #ccf4cc;
-            }
-          `)}>
-            <div>
-              Покровський (від 1-го бутля)<br />
-              <span>понеділок - п&apos;ятниця</span> 48 грн/шт
-            </div>
-          </div>
-          <div className={cx(regionStyle, css`
-            :before {
-              content: "3";
-              background-color: #003399;
-            }
-          `)}>
-            <div>
-              Саксаганський (від 2-х бутлів)<br />
-              <span>вівторок, п&apos;ятниця</span> 50 грн/шт
-            </div>
-          </div>
-          <div className={cx(regionStyle, css`
-            :before {
-              content: "4";
-              background-color: #99ff66;
-            }
-          `)}>
-            <div>
-              Довгинцівський (від 2-х бутлів)<br />
-              <span>вівторок, п&apos;ятниця</span> 50 грн/шт
-            </div>
-          </div>
-          <div className={cx(regionStyle, css`
-            :before {
-              content: "5";
-              background-color: #cc9900;
-            }
-          `)}>
-            <div>
-              Центрально-Міський (від 2-х бутлів)<br />
-              <span>вівторок, п&apos;ятниця</span> 50 грн/шт
-            </div>
-          </div>
-          <div className={cx(regionStyle, css`
-            :before {
-              content: "6";
-              background-color: #ff794b;
-            }
-          `)}>
-            <div>
-              Металургійний (від 2-х бутлів)<br />
-              <span>вівторок, п&apos;ятниця</span> 50 грн/шт
-            </div>
-          </div>
-          <div className={cx(regionStyle, css`
-            border: none;
+          {regions.map((region) => (
+            <div key={region.id} className={css`
+              display: flex;
+              align-items: center;
+              color: var(--color-blue);
+              font-size: 1.2rem;
+              font-weight: 700;
+              padding: 10px 0;
+              border-bottom: 1px solid var(--color-light-blue);
 
-            :before {
-              content: "7";
-              background-color: #990000;
-            }
-          `)}>
+              @media (max-width: 840px) {
+                font-size: 1rem;
+              }
+
+              @media (max-width: 650px) {
+                  font-size: 1.2rem;
+              }
+
+              @media (max-width: 380px) {
+                  font-size: 1rem;
+              }
+
+              span {
+                font-weight: 300;
+              }
+            `}>
+              <div className={css`
+                background-color: ${colorRegion(region.id)};
+                color: #111111;
+                padding: 10px ${region.id === 1 ? "19px" : "17px"};
+                margin-right: 10px;
+                border-radius: 50%;
+                border: 1px solid #0e9f10;
+              `}>{region.id}</div>
+              <div>
+                {region.regionName} (від {region.minQty}-х бутлів)<br />
+                <span>{region.delivery}</span> {region.cost} грн/шт
+              </div>
+            </div>
+          ))}
+
+          <div className = { css`
+              display: flex;
+              align-items: center;
+              color: var(--color-blue);
+              font-size: 1.2rem;
+              font-weight: 700;
+              padding: 10px 0;
+
+              @media (max-width: 840px) {
+                font-size: 1rem;
+              }
+
+              @media (max-width: 650px) {
+                  font-size: 1.2rem;
+              }
+
+              @media (max-width: 380px) {
+                  font-size: 1rem;
+              }
+
+              span {
+                font-weight: 300;
+              }
+            `}>
+            <div className={css`
+                background-color: #990000;
+                color: #111111;
+                padding: 10px 17px;
+                margin-right: 10px;
+                border-radius: 50%;
+                border: 1px solid #0e9f10;
+              `}>7</div>
             <div>
               Інгулецький (від 2-х бутлів)<br />
-              <span>тимчасово не доставляється</span> 50 грн/шт
+              <span>тимчасово не доставляється</span>
             </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -141,38 +171,36 @@ const Delivery = () => {
 
 export default Delivery
 
-const regionStyle = css`
-  display: flex;
-  align-items: center;
-  color: var(--color-blue);
-  font-size: 1.2rem;
-  font-weight: 700;
-  padding: 10px 0;
-  border-bottom: 1px solid var(--color-light-blue);
+// const regionStyle = css`
+//   display: flex;
+//   align-items: center;
+//   color: var(--color-blue);
+//   font-size: 1.2rem;
+//   font-weight: 700;
+//   padding: 10px 0;
+//   border-bottom: 1px solid var(--color-light-blue);
 
-  @media (max-width: 840px) {
-    font-size: 1rem;
-  }
+//   @media (max-width: 840px) {
+//     font-size: 1rem;
+//   }
 
-  @media (max-width: 650px) {
-      font-size: 1.2rem;
-  }
+//   @media (max-width: 650px) {
+//       font-size: 1.2rem;
+//   }
 
-  @media (max-width: 380px) {
-      font-size: 1rem;
-  }
+//   @media (max-width: 380px) {
+//       font-size: 1rem;
+//   }
 
-  span {
-    font-weight: 300;
-  }
+//   span {
+//     font-weight: 300;
+//   }
 
-  :before {
-    content: "1";
-    background-color: #996600;
-    color: #111111;
-    padding: 10px 17px;
-    margin-right: 10px;
-    border-radius: 50%;
-    border: 1px solid #0e9f10;
-  }  
-`
+//   :before {
+//     color: #111111;
+//     padding: 10px 17px;
+//     margin-right: 10px;
+//     border-radius: 50%;
+//     border: 1px solid #0e9f10;
+//   }  
+// `

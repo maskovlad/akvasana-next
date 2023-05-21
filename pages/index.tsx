@@ -27,7 +27,7 @@ export default function Home({
       <Preferences />
       <Order regions={regions} accessory={accessory}/>
       <About />
-      <Delivery />
+      <Delivery regions={regions} />
       <Accessory />
       <Blog />
     </Layout>
