@@ -135,6 +135,7 @@ const Order = ({
           max-width: 100%;
           border-radius: 20px;
           padding: 0.5rem 2rem;
+          filter: var(--block-shadow);
 
           @media (max-width: 600px) {
             margin: 30px 0;

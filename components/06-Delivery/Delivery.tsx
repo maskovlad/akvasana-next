@@ -76,6 +76,8 @@ const Delivery = ({ regions }: { regions: Region[]; }) => {
         <div className={css`
         `}>
           <Image className={css`
+            filter: var(--block-shadow);
+
             @media (max-width: 900px) {
               width: 100%;
               height: auto;

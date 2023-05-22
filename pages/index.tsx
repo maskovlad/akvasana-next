@@ -6,6 +6,7 @@ import About from "@/components/05-About/About";
 import Delivery from "@/components/06-Delivery/Delivery";
 import Accessory from "@/components/07-Accesoory/Accessory";
 import Blog from "@/components/08-Blog/Blog";
+import Contacts from "@/components/09-Contacts/Contacts";
 import { getRegions, getAccessory } from "../lib/dbService";
 import { Accessories, Region } from "@/types/AkvasanaData";
 
@@ -30,6 +31,7 @@ export default function Home({
       <Delivery regions={regions} />
       <Accessory />
       <Blog />
+      <Contacts />
     </Layout>
   );
 }

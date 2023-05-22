@@ -19,7 +19,7 @@ const Promo = () => {
         height: 500px;
         border-radius: 50% 100px 100px;
         border: 1px solid var(--color-light-blue);
-        filter: drop-shadow(2px 2px 6px blue);
+        filter: var(--block-shadow);
 
         @media (max-width: 690px) {
           height: 450px;
@@ -65,7 +65,7 @@ const Promo = () => {
       >
         <Image
           className={css`
-            filter: drop-shadow(2px 2px 4px white);
+            filter: var(--pics-shadow);
 
             width: inherit;
             height: inherit;
