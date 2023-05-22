@@ -66,7 +66,7 @@ const Contacts = () => {
 };
 
 function Map() {
-  const center = useMemo(() => ({ lat: 47.999029, lng: 33.473331 }), []);
+  const center = useMemo(() => ({ lat: 47.999011820799154, lng: 33.47324719736604 }), []);
 
   return (
     <GoogleMap zoom={18} center={center} mapContainerClassName="map-container">
