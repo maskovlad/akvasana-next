@@ -1,0 +1,94 @@
+.wp-block-image {
+  position: relative;
+  width: 100%;
+  padding: 2rem;
+}
+
+.wp-block-image img {
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 5px #333);
+}
+
+.wp-block-image figcaption {
+  position: absolute;
+  left: 10px;
+  top: 0;
+  padding: 0.45rem 2.5rem 1rem;
+  font-size: .9rem;
+  color: var(--color-white);
+  background: var(--color-light-blue);
+  -webkit-clip-path: polygon(0 0, 84% 0, 100% 100%, 16% 100%);
+  clip-path: polygon(0 0, 84% 0, 100% 100%, 16% 100%);
+  z-index: -1;
+}
+
+/* кнопки-посилання */
+/* .btn-wrapper a {
+  background: var(--color-rose);
+  width: max-content;
+  display: inline-block;
+  color: var(--color-white);
+  padding: 0.75rem 1.2rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  border: 1px solid var(--color-rose);
+  box-shadow: var(--box-shadow-rose);
+  transition: var(--transition);
+}
+ */
+
+.page-content {
+  margin: 0 0 5rem 0;
+}
+
+ .page-header {
+  margin: 3rem 0;
+ }
+
+ .wp-block-heading {
+   margin: 6rem 0 0;
+ }
+
+.wp-block-table {
+  overflow-x: scroll;
+}
+
+.wp-block-table table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: auto;
+  border: 1px solid var(--color-grey);
+}
+
+.wp-block-table table tbody,
+.wp-block-table table tbody tr,
+.wp-block-table table tbody tr td {
+  border: inherit;
+}
+
+/* =======MEDIA QUERIES (MEDIUM DEVICES) ======= */
+@media screen and (max-width: 1024px) {}
+
+@media screen and (max-width: 900px) {
+  .wp-block-image figcaption {
+    padding: 0.3rem 2rem 1rem;
+    font-size: .8rem;
+    top: 8px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wp-block-image figcaption {
+    padding: 0.3rem 1.5rem 1rem 1rem;
+    font-size: .7rem;
+    top: 10px;
+  }
+}
+
+/* =======MEDIA QUERIES (small DEVICES) ======= */
+@media screen and (max-width: 640px) {}
+
+@media screen and (max-width: 380px) {}
+
+@media screen and (max-width: 340px) {}
