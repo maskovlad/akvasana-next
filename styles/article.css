@@ -42,12 +42,25 @@
   margin: 0 0 5rem 0;
 }
 
+.page-content ul {
+  margin: 2rem 0 2rem 3rem;
+}
+
+.page-content ul li {
+  margin: 1rem 0 0 0;
+  list-style: disc;
+}
+
  .page-header {
   margin: 3rem 0;
  }
 
  .wp-block-heading {
-   margin: 6rem 0 0;
+   margin: 6rem 0 3rem;
+ }
+
+ .has-text-align-center {
+  text-align: center;
  }
 
 .wp-block-table {
@@ -87,7 +100,11 @@
 }
 
 /* =======MEDIA QUERIES (small DEVICES) ======= */
-@media screen and (max-width: 640px) {}
+@media screen and (max-width: 640px) {
+  .wp-block-heading {
+    margin: 3rem 0 1rem;
+  }
+}
 
 @media screen and (max-width: 380px) {}
 
