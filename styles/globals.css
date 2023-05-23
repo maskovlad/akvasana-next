@@ -63,6 +63,10 @@ h2 {
   filter: var(--header-shadow);
 }
 
+nav ul li {
+  font-weight: 500;
+}
+
 a {
   color: var(--color-blue);
   text-decoration: none;
