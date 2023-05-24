@@ -56,6 +56,15 @@
   list-style: disc;
 }
 
+.page-content ol {
+  margin: 2rem 0 2rem 3rem;
+}
+
+.page-content ol li {
+  margin: 1rem 0 0 0;
+  list-style: decimal;
+}
+
 .page-header {
   margin: 3rem 0;
 }
