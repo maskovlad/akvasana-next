@@ -14,6 +14,11 @@
   --header-shadow: drop-shadow(0 0 2px var(--color-blue));
   --pics-shadow: drop-shadow(2px 2px 4px white);
   --block-shadow: drop-shadow(2px 2px 6px var(--color-blue));
+  --green-gradient: linear-gradient(to bottom,
+        rgb(80 229 50) 0%,
+        rgb(56 220 27) 50%,
+        rgb(63 220 39) 51%,
+        rgb(35 173 19) 100%);
 }
 
 * {
@@ -95,7 +100,7 @@ main article.article {
 }
 
 .btn {
-  background: var(--color-green);
+  background: var(--green-gradient);
   width: max-content;
   display: inline-block;
   color: var(--color-white);

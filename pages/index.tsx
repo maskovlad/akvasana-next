@@ -29,7 +29,7 @@ export default function Home({
       <Order regions={regions} accessory={accessory}/>
       <About />
       <Delivery regions={regions} />
-      <Accessory />
+      <Accessory accessory={accessory} />
       <Blog />
       {/* <Contacts /> */}
     </Layout>

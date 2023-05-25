@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper";
+import { Autoplay, Navigation, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -38,7 +38,7 @@ const Blog = () => {
       </svg>
 
       <Swiper
-        modules={[Navigation, Pagination]}
+        modules={[Autoplay, Navigation, Pagination]}
         id="main"
         slidesPerView={3}
         navigation
@@ -67,6 +67,11 @@ const Blog = () => {
           height: 100%;
           padding: 2rem 0;
         `}
+        loop={true}
+        // autoplay={{
+        //   delay: 2500,
+        //   disableOnInteraction: false,
+        // }}
       >
 
         <SwiperSlide className={swiperSlide}>
