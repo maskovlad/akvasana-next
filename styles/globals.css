@@ -137,6 +137,10 @@ footer {
   width: 100%;
 }
 
+section {
+  margin-bottom: 7rem;
+}
+
 @media (max-width: 1024px) {
   main article.article {
     padding: 2rem 5%;

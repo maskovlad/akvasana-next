@@ -131,7 +131,7 @@ const Order = ({
 
       <div className={css`
           background-color: #0a5b88;
-          margin: 50px 0;
+          margin: 50px 0 0;
           max-width: 100%;
           border-radius: 20px;
           padding: 0.5rem 2rem;

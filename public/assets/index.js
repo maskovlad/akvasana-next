@@ -4,6 +4,7 @@ export { default as phoneIcon } from "./phone.svg";
 export { default as drinkGirl } from "./drink_girl500x565-min.png";
 export { default as logoBottle } from "./logo_bottle-min.png";
 export { default as krogSchema } from "./krog-scheme-delivery.png";
+export { default as aboutImg } from "./prom21.jpg";
 
 // Posts
 export { default as post1img } from "./vplyv-khimichnykh-rechovyn/lakmus.webp";
