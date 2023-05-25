@@ -15,7 +15,10 @@ const Contacts = () => {
   if (!isLoaded) return <div>Loading...</div>;
 
   return (
-    <section className={cx(montserrat.className, css`text-align: center;`)}>
+    <section 
+      className={cx(montserrat.className, css`text-align: center;`)}
+      id="contacts"
+    >
       <h1 className={cx(comfortaaFont, css`
         margin: 2rem 0;
         text-align: center;

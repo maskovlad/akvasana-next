@@ -5,12 +5,12 @@ import { default as waterOnHands } from "@/public/assets/vyhadani-poniattia-i-za
 const index = () => {
   return (
     <Layout
-      title="ЧИ ІСНУЄ НАСПРАВДІ «ЖИВА» І «МЕРТВА» ВОДА — Аква Сана"
+      title="Чи існує насправді «ЖИВА» і «МЕРТВА» вода? — Аква Сана"
       description="Чи правда, що є «жива» і «мертва» вода? Спираючись на наукові факти і дослідження, розвіюємо народні міфи і забобони."
     >
       <header className="page-header">
         <h1 className="entry-title">
-          ЧИ ІСНУЄ НАСПРАВДІ «ЖИВА» І «МЕРТВА» ВОДА
+          Чи існує насправді «ЖИВА» і «МЕРТВА» вода?
         </h1>
       </header>
       <div className="page-content">

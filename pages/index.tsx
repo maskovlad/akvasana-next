@@ -31,7 +31,7 @@ export default function Home({
       <Delivery regions={regions} />
       <Accessory />
       <Blog />
-      <Contacts />
+      {/* <Contacts /> */}
     </Layout>
   );
 }
