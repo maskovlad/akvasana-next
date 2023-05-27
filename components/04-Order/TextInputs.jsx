@@ -1,5 +1,5 @@
 import { css } from "@emotion/css";
-import { PatternFormat } from "react-number-format";
+import NumberFormat from "react-number-format";
 
 const wrap = css`
   display: block;
@@ -39,7 +39,7 @@ const input = css`
   }
 `;
 
-export const RegionSelect = ({ regSelect, onChange }) => {
+export const RegionSelect = ({ regSelect, value,onChange }) => {
   const regItems = (regSelect) => {
     return regSelect.map((reg) => (
       <option key={reg.id} value={JSON.stringify(reg)}>
@@ -61,7 +61,7 @@ export const RegionSelect = ({ regSelect, onChange }) => {
         name="regions"
         id="as-regions"
         className={input}
-        defaultValue=""
+        value={value}
         onChange={(e) => onChange(e.target.value)}
         required
       >
@@ -74,7 +74,7 @@ export const RegionSelect = ({ regSelect, onChange }) => {
   );
 };
 
-export const Address = ({ onChange }) => {
+export const Address = ({ value, onChange }) => {
   return (
     <div className={wrap}>
       <label htmlFor="as-address" className={label}>
@@ -82,7 +82,7 @@ export const Address = ({ onChange }) => {
       </label>
       <input
         type="text"
-        defaultValue=""
+        value={value}
         onChange={onChange}
         id="as-address"
         name="as-address"
@@ -95,20 +95,21 @@ export const Address = ({ onChange }) => {
   );
 };
 
-export const Phone = ({ onChange }) => {
+export const Phone = ({ value, onChange }) => {
   return (
     <div className={wrap}>
       <label htmlFor="phone" className={label}>
         Телефон <span style={{ color: "red" }}>*</span>
       </label>
-      <PatternFormat
+      <NumberFormat
         id="phone"
         name="phone"
         className={input}
+        value={value}
         format="+38(###)-###-##-##"
         mask="_"
         placeholder="+38(000)-000-00-00"
-        onChange={onChange}
+        onValueChange={onChange}
         required
       />
     </div>
