@@ -1,7 +1,6 @@
 import { comfortaaFont } from '@/styles/ComfortaaFont'
 import { css, cx } from '@emotion/css'
 import { aboutImg } from '@/public/assets'
-import Image from 'next/image'
 
 const About = () => {
   return (
@@ -11,11 +10,11 @@ const About = () => {
       align-items: center;
       justify-content: center;
     `}
-      id="accessory">
-      <h1 className={cx(comfortaaFont, css`
+      id="about">
+      <h2 className={cx(comfortaaFont, css`
         margin: 2rem 0;
         text-align: center;
-      `)}>Про воду Аква Сана</h1>
+      `)}>Про воду Аква Сана</h2>
       <svg
         width="1.8133296in"
         height="0.093333147in"

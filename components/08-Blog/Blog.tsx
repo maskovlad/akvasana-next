@@ -18,10 +18,10 @@ const Blog = () => {
       justify-content: center;
     `}
       id="blog">
-      <h1 className={cx(comfortaaFont, css`
+      <h2 className={cx(comfortaaFont, css`
         margin: 2rem 0;
         text-align: center;
-      `)}>Блог - корисні статті</h1>
+      `)}>Блог - корисні статті</h2>
       <svg
         width="1.8133296in"
         height="0.093333147in"

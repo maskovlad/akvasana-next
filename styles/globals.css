@@ -133,7 +133,6 @@ footer {
 section,
 header,
 footer {
-  border: 1px dashed darkgray;
   width: 100%;
 }
 

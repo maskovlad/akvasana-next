@@ -16,10 +16,10 @@ const Accessory = ({ accessory }: { accessory: Accessories }) => {
       justify-content: center;
     `}
       id="accessory">
-      <h1 className={cx(comfortaaFont, css`
+      <h2 className={cx(comfortaaFont, css`
         margin: 2rem 0;
         text-align: center;
-      `)}>Додаткові аксесуари</h1>
+      `)}>Додаткові аксесуари</h2>
       <svg
         width="1.8133296in"
         height="0.093333147in"
@@ -143,7 +143,7 @@ const Accessory = ({ accessory }: { accessory: Accessories }) => {
               :after {
                 right: 0;
               }
-            `}>{bootle}грн</div>
+            `}>{pomp}грн</div>
           </div>
         </div>
 
