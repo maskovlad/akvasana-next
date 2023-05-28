@@ -29,8 +29,8 @@ const Header = () => {
         <Link href="/">
           <Image
             src={logo}
-            width={220}
-            height={41}
+            width={384}
+            height={80}
             alt="Логотип Аква Сана Кривий Ріг"
             priority
           />
