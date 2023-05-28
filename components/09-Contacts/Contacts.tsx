@@ -52,6 +52,7 @@ const Contacts = () => {
           text-align: center;
           padding: 1rem 0;
         `}>
+          <b>Офіційне представництво Аква Сана м. Кривий Ріг</b><br /><br />
           <b><a href="tel:+380680085009">📞{" "}068-008-5-009</a></b><br />
           <b><a href="tel:+380504580838">📞{" "}050-458-08-38</a></b><br /><br />
           <b><a title="Пошта Аква Сана Кривий Ріг" href="mailto:akvasana@ukr.net">📨{" "}akvasana@ukr.net</a></b><br /><br />

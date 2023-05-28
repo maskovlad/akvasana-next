@@ -15,10 +15,10 @@
   --pics-shadow: drop-shadow(2px 2px 4px white);
   --block-shadow: drop-shadow(2px 2px 6px var(--color-blue));
   --green-gradient: linear-gradient(to bottom,
-        rgb(80 229 50) 0%,
-        rgb(56 220 27) 50%,
-        rgb(63 220 39) 51%,
-        rgb(35 173 19) 100%);
+      rgb(80 229 50) 0%,
+      rgb(56 220 27) 50%,
+      rgb(63 220 39) 51%,
+      rgb(35 173 19) 100%);
 }
 
 * {
@@ -47,10 +47,10 @@ body {
 }
 
 body {
+  background: url(/assets/texture-min.png), #0005ef22;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url(/assets/texture-min.png);
 }
 
 h1 {
@@ -70,6 +70,10 @@ h2 {
 
 nav ul li {
   font-weight: 500;
+}
+
+u {
+  text-decoration: underline;
 }
 
 a {
