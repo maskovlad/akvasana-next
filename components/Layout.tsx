@@ -31,7 +31,7 @@ const Layout = ({
           content="Аква Сана Кривий Ріг, akvasana.com.ua"
         />
         <meta name="robots" content="index,follow" />
-        <link rel="canonical" href={`https://www.akvasana.com.ua${pathname}`} />
+        <link rel="canonical" href={`https://akvasana.com.ua${pathname}`} />
       </Head>
       <Header />
       <main className={montserrat.className}>
