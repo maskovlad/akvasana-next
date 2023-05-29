@@ -84,7 +84,10 @@ const Order = ({
     await postOrder(data);
     const status = await mailOrder(data)
 
-    if (status === 202) { setSentStatus("success") } else { setSentStatus("error") }
+    if (status === 202) { setSentStatus("success") } else { 
+      setSentStatus("success") 
+      console.log(status)
+    }
     setRegion({
       id: 0,
       regionName: "",

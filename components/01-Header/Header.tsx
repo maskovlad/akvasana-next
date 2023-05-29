@@ -28,6 +28,24 @@ const Header = () => {
       <div>
         <Link href="/">
           <Image
+            className={css`
+              @media screen and (max-width: 500px) {
+                width: 20rem;
+                height: auto;
+              }
+              @media screen and (max-width: 420px) {
+                width: 18rem;
+                height: auto;
+              }
+              @media screen and (max-width: 380px) {
+                width: 17rem;
+                height: auto;
+              }
+              @media screen and (max-width: 350px) {
+                width: 16rem;
+                height: auto;
+              }
+            `}
             src={logo}
             width={384}
             height={80}
@@ -42,19 +60,12 @@ const Header = () => {
         className={css`
           width: 100%;
           margin-left: 10%;
-          @media screen and (max-width: 900px) {
+          @media screen and (max-width: 1200px) {
             display: none;
           }
         `}
       >
-        <ul
-          className={css`
-            display: flex;
-            justify-content: space-between;
-            list-style: none;
-            font-weight: 400;
-          `}
-        >
+        <ul>
           {navLinks.map((item) => (
             <li
               key={item.link}
@@ -98,7 +109,7 @@ const Header = () => {
         className={css`
           display: none;
 
-          @media screen and (max-width: 900px) {
+          @media screen and (max-width: 1200px) {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -167,7 +178,7 @@ const Header = () => {
           </ul>
         </div>
       ) : null}
-    
+
     </header>
   );
 };

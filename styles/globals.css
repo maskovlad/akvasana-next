@@ -68,6 +68,13 @@ h2 {
   filter: var(--header-shadow);
 }
 
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  font-weight: 400;
+}
+
 nav ul li {
   font-weight: 500;
 }
@@ -177,10 +184,14 @@ section {
   .map-container {
     height: 50vh;
   }
+
+  section {
+    margin-bottom: 4rem;
+  }
 }
 
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
   main article.article {
     padding: 0 5%;
   }
-}
+} */
