@@ -106,10 +106,10 @@ export const Phone = ({ value, onChange }) => {
         name="phone"
         className={input}
         value={value}
-        format="+38(###)-###-##-##"
+        format="(###)-###-##-##"
         mask="_"
-        placeholder="+38(000)-000-00-00"
         onValueChange={onChange}
+        placeholder="(000)-000-00-00"
         required
       />
     </div>
