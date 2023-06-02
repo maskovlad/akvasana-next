@@ -16,6 +16,9 @@ export default async function handler(
       console.error("Помилка обміну з Telegram: ", error);
     }
   } else {
-    console.error("Це повідомлення не з Telegram");
+    console.error("Це повідомлення не з Telegram", request);
+    response.status(400).json({
+        body: "Bad request",
+    })
   }
 }
