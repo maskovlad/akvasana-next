@@ -5,6 +5,7 @@ export const getRegions = async () => {
   try {
     const res = await prisma.akvasanaRegions.findMany({
       where: { minQty: { not: 0 } },
+      orderBy: { id: "asc" },
     });
     return res;
   } catch (error) {
@@ -22,4 +23,3 @@ export const getAccessory = async () => {
     return false;
   }
 };
-

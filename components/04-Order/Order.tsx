@@ -63,6 +63,8 @@ const Order = ({
   // трансформация данных для отправки на сервер
   const orderData = () => {
     const data: AkvasanaOrder = {
+      id: undefined,
+      createdAt: undefined,
       app: "SITE",
       regionName: region.regionName,
       address,

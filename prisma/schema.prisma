@@ -92,3 +92,12 @@ model Testimonial {
   published       Boolean  @default(false)
   Rating          Rating?  @relation(fields: [ratingCharacter], references: [character])
 }
+
+model AkvasanaRegions_d {
+  id         Int    @id
+  regionName String
+  minQty     Int
+  cost       Int
+  cost1      Int
+  delivery   String
+}

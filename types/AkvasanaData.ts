@@ -1,5 +1,7 @@
 export type AkvasanaOrder = {
-  app:string;
+  id: number | undefined;
+  createdAt: string | undefined;
+  app: string;
   regionName: string;
   address: string;
   phone: string;
@@ -15,13 +17,16 @@ export type Region = {
   regionName: string;
   minQty: number;
   cost: number;
-  cost1: number | null;
+  cost1: number;
   delivery: string;
 };
 
-export type Accessories = {
+export type Accessory = {
   id: number;
   item: string;
   title: string;
   cost: number;
-}[];
+};
+
+export type Accessories = Accessory[];
+
