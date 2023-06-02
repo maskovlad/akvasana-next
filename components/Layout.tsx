@@ -17,7 +17,7 @@ const Layout = ({
   description: string;
 }) => {
   const router = useRouter();
-  const pathname = router.pathname === "/" ? "" : router.pathname;
+  const pathname = router.pathname === "/" ? "" : router.pathname+'/';
 
   return (
     <>
