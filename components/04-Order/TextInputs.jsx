@@ -99,7 +99,7 @@ export const Phone = ({ value, onChange }) => {
   return (
     <div className={wrap}>
       <label htmlFor="phone" className={label}>
-        Телефон <span style={{ color: "red" }}>*</span>
+        Телефон(без +38) <span style={{ color: "red" }}>*</span>
       </label>
       <NumberFormat
         id="phone"
