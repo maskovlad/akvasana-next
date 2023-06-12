@@ -5,6 +5,7 @@ export default async function handler(
   request: NextApiRequest,
   response: NextApiResponse
 ) {
+  console.log({requestBody: request.body})
   if (request.body?.message?.text) {
     try {
       await bot.handleUpdate(request.body);
@@ -16,7 +17,7 @@ export default async function handler(
       console.error("Помилка обміну з Telegram: ", error);
     }
   } else {
-    console.error("Це повідомлення не з Telegram", request);
+    console.error("Це повідомлення не з Telegram", request.body);
     response.status(400).json({
         body: "Bad request",
     })
