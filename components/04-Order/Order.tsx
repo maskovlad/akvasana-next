@@ -7,7 +7,7 @@ import QtyButtons from "./QtyButtons";
 import { Accessories, AkvasanaOrder, Region } from "@/types/AkvasanaData";
 import { RegionSelect, Address, Phone } from './TextInputs';
 import { comfortaaFont } from '@/styles/ComfortaaFont';
-import NumberFormat from "react-number-format";
+import LoadingDots from '../loading-dots';
 
 
 const Order = ({
@@ -34,7 +34,7 @@ const Order = ({
   const [qty, setQty] = useState(0);
   const [total, setTotal] = useState(0); // 9
   const [minQty, setMinQty] = useState(0);
-  const [sentStatus, setSentStatus] = useState("undef")
+  const [sentStatus, setSentStatus] = useState<string | undefined>(undefined)
 
   // при изменении стейта указанных комп-тов useEffect пересчитает сумму
   useEffect(() => {
@@ -58,6 +58,7 @@ const Order = ({
     setRegion(selectRegion);
     setQty(() => selectRegion.minQty * 1);
     setMinQty(() => selectRegion.minQty * 1);
+    setSentStatus(undefined)
   };
 
   // трансформация данных для отправки на сервер
@@ -80,6 +81,8 @@ const Order = ({
 
   async function orderSubmit(event: any) {
     event.preventDefault();
+
+    setSentStatus("sending")
 
     const data = orderData()
 
@@ -107,11 +110,12 @@ const Order = ({
     setTotal(0)
     setMinQty(0)
 
-    setTimeout(() => setSentStatus("done"), 3000)
+    // setTimeout(() => setSentStatus("done"), 3000)
   }
 
   return (
-    <section className={css`
+    <section 
+      className={css`
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -214,8 +218,14 @@ const Order = ({
             `}>
             <button type="submit" className={cx("btn", css`
               margin: 20px 0;
+              width: 10rem;
             `)}>
-              <span>ЗАМОВИТИ</span>
+              <span>
+                {sentStatus === "sending" 
+                  ? <LoadingDots color="var(--color-white)" /> 
+                  : sentStatus === "success" ? "ПРИЙНЯТО"
+                  : "ЗАМОВИТИ" }
+              </span>
             </button>
             {sentStatus === "success"
               ? <p className={css`

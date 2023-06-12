@@ -3,7 +3,8 @@ import { css } from "@emotion/css";
 const Client = ({ onChange, checked }) => {
   return (
     <>
-      <div className={css`
+      <div 
+        className={css`
           display: block;
           padding: 20px;
           width: 50%;
@@ -22,7 +23,8 @@ const Client = ({ onChange, checked }) => {
           `}>
           Чи є ви клієнтом Аква Сана <span style={{ color: "red" }}>*</span>
         </p>
-        <div className={css`
+        <div 
+          className={css`
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
@@ -42,7 +44,8 @@ const Client = ({ onChange, checked }) => {
               checked={checked === "Так" ? true : false} />
             Так
           </label>
-          <label className={css`
+          <label 
+            className={css`
               margin-left: 10px;
               color: var(--color-white);
             `}>
