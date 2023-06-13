@@ -41,6 +41,7 @@ const Order = ({
     // console.log('useEffect 1');
     if (!region) return;
     countSum();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [region, qty, bottle, pomp]);
 
   const countSum = () => {
@@ -86,8 +87,10 @@ const Order = ({
 
     const data = orderData()
 
-    await postOrder(data);
+    postOrder(data);
+    console.log("postOrder complete", Date.now())
     const status = await mailOrder(data)
+    console.log("mailOrder complete", Date.now())
 
     if (status === 202) { setSentStatus("success") } else { 
       setSentStatus("success") 
@@ -110,6 +113,7 @@ const Order = ({
     setTotal(0)
     setMinQty(0)
 
+    console.log("SendGrid прислав код статусу: ", status)
     // setTimeout(() => setSentStatus("done"), 3000)
   }
 

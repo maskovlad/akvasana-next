@@ -3,7 +3,7 @@ import { css } from "@emotion/css";
 const Client = ({ onChange, checked }) => {
   return (
     <>
-      <div 
+      <div
         className={css`
           display: block;
           padding: 20px;
@@ -23,7 +23,7 @@ const Client = ({ onChange, checked }) => {
           `}>
           Чи є ви клієнтом Аква Сана <span style={{ color: "red" }}>*</span>
         </p>
-        <div 
+        <div
           className={css`
             display: flex;
             flex-direction: row;
@@ -44,17 +44,18 @@ const Client = ({ onChange, checked }) => {
               checked={checked === "Так" ? true : false} />
             Так
           </label>
-          <label 
-            className={css`
+          <label className={css`
               margin-left: 10px;
               color: var(--color-white);
-            `}>
+            `}
+          >
             <input
               type="radio"
               className={options}
               name="client"
               value="Ні"
-              onChange={onChange} />
+              onChange={onChange}
+              checked={checked === "Ні" ? true : false} />
             Ні
           </label>
         </div>

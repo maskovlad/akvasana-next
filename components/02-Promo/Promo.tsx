@@ -103,7 +103,7 @@ const Promo = () => {
           Доставка води
           <br />у Кривому Розі
         </h1>
-        <p
+        <address
           className={css`
             align-self: flex-end;
             font-size: 2rem;
@@ -112,6 +112,7 @@ const Promo = () => {
             color: var(--color-blue);
             filter: drop-shadow(2px 2px 2px white);
             text-align: center;
+            font-style: normal;
 
             @media (max-width: 840px) {
               font-size: 1.5rem;
@@ -138,7 +139,7 @@ const Promo = () => {
               width={30}
               height={30}
               src={phoneIcon.src}
-              alt="Phone Icon"
+              alt="Наш телефон"
             />
             068-008-50-09
           </a>
@@ -158,7 +159,7 @@ const Promo = () => {
               width={30}
               height={30}
               src={phoneIcon.src}
-              alt="Phone Icon"
+              alt="Наш телефон"
             />
             050-458-08-38
           </a>
@@ -179,11 +180,11 @@ const Promo = () => {
               width={30}
               height={30}
               src={telegramIcon.src}
-              alt="Telegram Icon"
+              alt="Telegram-бот для замовлень"
             />
             Telegram бот
           </a>
-        </p>
+        </address>
 
         <div
           className={css`
