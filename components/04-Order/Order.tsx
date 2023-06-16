@@ -8,6 +8,7 @@ import { Accessories, AkvasanaOrder, Region } from "@/types/AkvasanaData";
 import { RegionSelect, Address, Phone } from './TextInputs';
 import { comfortaaFont } from '@/styles/ComfortaaFont';
 import LoadingDots from '../loading-dots';
+import forAdmin from "@/lib/forAdmin"
 
 
 const Order = ({
@@ -92,9 +93,12 @@ const Order = ({
     const status = await mailOrder(data)
     console.log("mailOrder complete", Date.now())
 
-    if (status === 202) { setSentStatus("success") } else { 
+    if (status === 202) { 
       setSentStatus("success") 
-      console.log(status)
+      forAdmin("Заказ прийнято нормально")
+    } else { 
+      setSentStatus("success") 
+      forAdmin(`akvasana: sendgrid замість 202 прислав status=${status?.toString}`)
     }
     setRegion({
       id: 0,
