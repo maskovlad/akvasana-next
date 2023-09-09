@@ -41,7 +41,7 @@ const Preferences = () => {
       `}>
 
         <div className={cx(card, css`animation-delay: 1s`)}>
-          <BsHandThumbsUpFill size={"2rem"} />
+          <BsHandThumbsUpFill size={32} />
           <h3>Висока якість очищення</h3>
           <svg
             className={css`
@@ -75,7 +75,7 @@ const Preferences = () => {
         </div>
 
         <div className={cx(card, css`align-self: flex-end; animation-delay: 0.75s`)}>
-          <FaVials size={"2rem"} />
+          <FaVials size={32} />
           <h3>Лабораторний контроль</h3>
           <svg
             className={css`
@@ -109,7 +109,7 @@ const Preferences = () => {
         </div>
 
         <div className={cx(card)}>
-          <FaTruck size={"2rem"} />
+          <FaTruck size={32} />
           <h3>Безкоштовна доставка</h3>
           <svg
             className={css`
@@ -143,7 +143,7 @@ const Preferences = () => {
         </div>
 
         <div className={cx(card, css`align-self: flex-end; animation-delay: 0.5s`)}>
-          <FaClock size={"2rem"} />
+          <FaClock size={32} />
           <h3>Замовлення онлайн 24/7</h3>
           <svg
             className={css`
