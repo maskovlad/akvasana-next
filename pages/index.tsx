@@ -9,6 +9,7 @@ import Blog from "@/components/08-Blog/Blog";
 import Contacts from "@/components/09-Contacts/Contacts";
 import { getRegions, getAccessory } from "../lib/dbService";
 import { Accessories, Region } from "@/types/AkvasanaData";
+import Video from "@/components/05-Video/Video";
 
 
 export default function Home({
@@ -28,6 +29,7 @@ export default function Home({
       <Preferences />
       <Order regions={regions} accessory={accessory}/>
       <About />
+      <Video />
       <Delivery regions={regions} />
       <Accessory accessory={accessory} />
       <Blog />
