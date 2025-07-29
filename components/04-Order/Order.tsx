@@ -88,7 +88,10 @@ const Order = ({
 
     const data = orderData()
 
-    postOrder(data);
+    const statusOrder = await postOrder(data);
+    console.log("statusOrder= ", statusOrder );
+    
+    setSentStatus("success")
     // console.log("postOrder complete", Date.now())
     // const status = await mailOrder(data)
     // console.log("mailOrder complete", Date.now())
