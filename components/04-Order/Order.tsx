@@ -89,17 +89,17 @@ const Order = ({
     const data = orderData()
 
     postOrder(data);
-    console.log("postOrder complete", Date.now())
-    const status = await mailOrder(data)
-    console.log("mailOrder complete", Date.now())
+    // console.log("postOrder complete", Date.now())
+    // const status = await mailOrder(data)
+    // console.log("mailOrder complete", Date.now())
 
-    if (status === 202) { 
-      setSentStatus("success") 
-      forAdmin("Заказ прийнято нормально")
-    } else { 
-      setSentStatus("success") 
-      forAdmin(`akvasana: sendgrid замість 202 прислав status=${status?.toString}`)
-    }
+    // if (status === 202) { 
+    //   setSentStatus("success") 
+    //   forAdmin("Заказ прийнято нормально")
+    // } else { 
+    //   setSentStatus("success") 
+    //   forAdmin(`akvasana: sendgrid замість 202 прислав status=${status?.toString}`)
+    // }
     setRegion({
       id: 0,
       regionName: "",
@@ -117,7 +117,7 @@ const Order = ({
     setTotal(0)
     setMinQty(0)
 
-    console.log("SendGrid прислав код статусу: ", status)
+    // console.log("SendGrid прислав код статусу: ", status)
     // setTimeout(() => setSentStatus("done"), 3000)
   }
 
