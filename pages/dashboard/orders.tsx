@@ -79,7 +79,8 @@ export default Orders
 export async function getServerSideProps() {
 
   const orders = await prisma.akvasanaOrders.findMany({
-    orderBy: { id: "desc" }
+    orderBy: { id: "desc" },
+    take: 200
   })
 
   return {
