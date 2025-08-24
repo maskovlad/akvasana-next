@@ -1,5 +1,5 @@
 import { css } from "@emotion/css";
-import NumberFormat from "react-number-format";
+// import NumberFormat from "react-number-format";
 
 const wrap = css`
   display: block;
@@ -101,7 +101,7 @@ export const Phone = ({ value, onChange }) => {
       <label htmlFor="phone" className={label}>
         Телефон(без +38) <span style={{ color: "red" }}>*</span>
       </label>
-      <NumberFormat
+      {/* <NumberFormat 
         id="phone"
         name="phone"
         className={input}
@@ -111,7 +111,19 @@ export const Phone = ({ value, onChange }) => {
         onValueChange={onChange}
         placeholder="(000)-000-00-00"
         required
+      /> */}
+       <input
+        type="text"
+        value={value}
+        onChange={onChange}
+        id="phone"
+        name="phone"
+        className={input}
+        maxLength="40"
+        placeholder="Введіть телефон (квартира/офіс)"
+        required
       />
+
     </div>
   );
 };

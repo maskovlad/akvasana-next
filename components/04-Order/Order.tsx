@@ -176,7 +176,8 @@ const Order = ({
           <div className={row}>
             <RegionSelect regSelect={regions} value={JSON.stringify(region)} onChange={regionChange} />
             <Address value={address} onChange={(event: any) => setAddress(event.target.value)} />
-            <Phone value={phone} onChange={(inputObj: any) => setPhone(inputObj.value)} />
+            {/* для react-number format <Phone value={phone} onChange={(inputObj: any) => setPhone(inputObj.value)} /> */}
+            <Phone value={phone} onChange={(event: any) => setPhone(event.target.value)} />
           </div>
 
           <div className={row}>
