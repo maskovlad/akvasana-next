@@ -1,4 +1,9 @@
 {
+  "build": {
+    "env": {
+      "NODE_VERSION": "22"
+    }
+  },
   "functions": {
     "pages/api/bot.ts": {
       "memory": 1024,
